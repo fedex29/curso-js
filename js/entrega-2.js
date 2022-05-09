@@ -62,21 +62,22 @@ let divResultadoCategorias = document.getElementById("divResultadoCategorias");
 
 inputTexto.addEventListener('change', () => {
     let buscador = inputTexto.value
-    console.log(buscador.toLowerCase())
-    let librosFiltrados = libros.filter(libro => libro.categoria.includes(buscador.toLowerCase()))
+    console.log(buscador)
+    let librosFiltrados = libros.filter(libro => libro.categoria.includes(buscador))
 
     librosFiltrados.forEach(libro => {
         divResultadoCategorias.innerHTML += `
         <div class="card" style="width: 18rem;">
             <div class="card-body">
             <h5 class="card-title">Titulo: ${libro.titulo}</h5>
-                <p>Marca: ${libro.categoria} </p>
+                <p>Categoria: ${libro.categoria} </p>
                 <p>Precio: $${libro.precio} </p>
             </div>
         </div>
         `
     })
 })
+
 
 /*
 alert("Has seleccionado: "+ categoriaElegida);
